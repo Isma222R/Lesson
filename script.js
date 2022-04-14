@@ -13,16 +13,16 @@ let servicePrice2 = prompt('Сколько это будет стоить?', '60
 
 let fullPrice = +screenPrice + +servicePrice1 + +servicePrice2;
 
-let servicePercentPrice = Math.floor(fullPrice - (fullPrice / rollback));
+let servicePercentPrice = Math.floor(fullPrice - (fullPrice / 100 * rollback));
 console.log(servicePercentPrice);
 if (fullPrice > 30000) {
     console.log('Даем скидку 10%');
 } else if (fullPrice > 15000 && fullPrice < 30000) {
-    console.log('skidka 5%');
+    console.log('Даём скидку 5%');
 } else if (fullPrice > 0 && fullPrice < 15000) {
-    console.log('Skidka 0');
+    console.log('Скидка не предусмотрена');
 } else {
-    console.log('chtoto poshlo ne tak');
+    console.log('Что-то пошло не так');
 }
 console.log(typeof title);
 console.log(typeof fullPrice);
@@ -32,6 +32,9 @@ console.log(screens);
 
 console.log('Стоимость верстки экранов ' + screenPrice + ' рублей/ долларов/гривен/юани');
 
-console.log(screens.toLocaleLowerCase().split());
+console.log(screens.toLocaleLowerCase().split(", "));
+
+
+
 
 
