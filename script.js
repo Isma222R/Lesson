@@ -1,7 +1,5 @@
 let title = prompt('Как называется проект', 'Название');
 let screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
-screens = screens.toLowerCase().split(', ');
-console.log(screens);
 
 let screenPrice = prompt('Сколько будет стоить данная работа?', 12000);
 let rollback = 25;
@@ -35,7 +33,5 @@ console.log(screens);
 console.log('Стоимость верстки экранов ' + screenPrice + ' рублей/ долларов/гривен/юани');
 
 console.log(screens.toLocaleLowerCase().split());
-
-console.log('Процент отката посреднику за работу ' + (fullPrice * (rollback / 100)))
 
 
