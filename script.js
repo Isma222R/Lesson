@@ -20,7 +20,7 @@ let allServicePrices
 
 
 
-const getAllServicePrices = () {
+const getAllServicePrices = function () {
     return service1 + service2
 }
 const showTypeOf = function (variable) {
@@ -37,6 +37,7 @@ const getTitle = function () {
 }
 
 
+
 if (fullPrice > 30000) {
     console.log('Даем скидку 10%');
 } else if (fullPrice > 15000 && fullPrice < 30000) {
@@ -46,11 +47,27 @@ if (fullPrice > 30000) {
 } else {
     console.log('Что-то пошло не так');
 }
+
+
+
+allServicePrices = getAllServicePrices()
+fullPrice = getFullprice()
+servicePercentPrice = getServicePercentPrice()
+title = getTitle()
+
+
+showTypeOf(title)
+showTypeOf(screenPrice)
+showTypeOf(adaptive)
+
+
+
 console.log(typeof title);
 console.log(typeof fullPrice);
 console.log(typeof adaptive);
 
 console.log(screens);
+console.log(fullPrice);
 
 console.log('Стоимость верстки экранов ' + screenPrice + ' рублей/ долларов/гривен/юани');
 
