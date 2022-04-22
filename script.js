@@ -4,11 +4,6 @@ let screenPrice = prompt('Сколько будет стоить данная р
 let rollback = 25;
 const adaptive = confirm('Нужен ли адаптив для сайта?');
 
-//let service1 = prompt('Какой дополнительный тип услуги нужен?', 'модалка');
-//let servicePrice1 = prompt('Сколько это будет стоить?', '5000');
-//let service2 = prompt('Какой дополнительный тип услуги нужен?', 'модалка2');
-//let servicePrice2 = prompt('Сколько это будет стоить?', '6000');
-
 
 
 let allServicePrices
@@ -17,7 +12,19 @@ const getAllServicePrices = function () {
     let sum = 0
 
     for (let i = 0; i < 2; i++) {
-        sum += +prompt("Сколько это будет стоить?")
+        let price = 0
+
+        if (i === 0) {
+            service1 = prompt("Какой дополнительный тип услуги нужен?")
+        } else if (i === 1) {
+            service2 = prompt("Какой дополнительный тип услуги нужен?")
+        }
+
+        do {
+            screenPrice = +prompt('Сколько будет стоить данная работа?')
+        } while (!isNumber(screenPrice));
+
+        sum += +screenPrice
     }
 
     return sum
@@ -50,11 +57,7 @@ const getRollbackMessage = function (price) {
     }
 }
 
-do {
-    screenPrice = +prompt('Сколько будет стоить данная работа?')
-} while (!isNumber(screenPrice));
-
-
+asking()
 allServicePrices = getAllServicePrices();
 fullPrice = getFullprice();
 servicePercentPrice = getServicePercentPrice();
@@ -74,7 +77,7 @@ console.log(typeof adaptive);
 console.log(screens);
 console.log(fullPrice);
 
-console.log('Стоимость верстки экранов ' + screenPrice + ' рублей/ долларов/гривен/юани');
+console.log('Стоимость верстки экранов ' + screenPrice + 'рублей');
 
 console.log(screens.toLocaleLowerCase().split(", "));
 
