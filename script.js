@@ -57,7 +57,6 @@ const getRollbackMessage = function (price) {
     }
 }
 
-asking()
 allServicePrices = getAllServicePrices();
 fullPrice = getFullprice();
 servicePercentPrice = getServicePercentPrice();
